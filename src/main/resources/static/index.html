@@ -54,11 +54,17 @@
             background: #2980b9;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+
+    <!-- STOMP client -->
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+
+    
 </head>
 <body>
 <div class="container">
     <h2>Meal Recommendation</h2>
-    <form method="POST" action="/submit">
+    <form  id="mealForm"  method="POST" action="/submit>
         <label for="cuisine">Cuisine Type</label>
         <input type="text" id="cuisine" name="cuisine" placeholder="e.g., Italian" required>
 
@@ -68,5 +74,6 @@
         <button type="submit">Get Recommendations</button>
     </form>
 </div>
+<script src="app.js"></script>
 </body>
 </html>
