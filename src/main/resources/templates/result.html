@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Meal Recommendations</title>
+    <style>
+        /* Basic Card Styling */
+        .card {
+            width: 300px;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            background-color: #f9f9f9;
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        .card .restaurant-name {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <h1>Healthy Meal Recommendations for <span th:text="${cuisine}"></span> in <span th:text="${city}"></span></h1>
+
+    <div class="container">
+        <!-- Loop through the recipes and render them as cards -->
+        <div th:each="recipe : ${recipes}" class="card">
+            <h3 th:text="${recipe.name}"></h3>
+            <p class="restaurant-name" th:text="'From ' + ${recipe.restaurantName}"></p>
+            <p th:text="${recipe.description}"></p>
+        </div>
+    </div>
+</body>
+</html>
